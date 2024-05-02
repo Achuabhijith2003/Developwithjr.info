@@ -81,6 +81,18 @@ body{
     font-size: 100px;
   }
 
+  .banner-textinside {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 10px;
+    font-size: 55px;
+  }
+
 .container-main{
     display: flex;
    /* border: 1px solid grey;*/
@@ -266,3 +278,14 @@ footer a:hover{
     #sobreMim img {width: 200px; height: 200px;}
 }   
 
+/* article-page */
+.article-page{
+    left: 50%;
+    right: 50% ;
+}
+
+/* code make hightlite */
+pre code {
+	font-family: Consolas, Mon;
+    background-color: #424242;
+}
