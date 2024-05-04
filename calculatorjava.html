@@ -11,25 +11,27 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
-    </head>
+        </head>
     <body>
+        <div id="banner">
+            <p class="banner-text">Develop with JR</p>
+          </div>
         <div class="wrapper">
             <header id="cabecalho">
+                <button id="menu-button">&#9776;</button> 
+                <nav id="side-menu">
+                    <button id="close-button">X</button>
+                    <!--  Side menu will go here -->
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="Palm Flowers.html">About</a></li>
+                        <li><a href="#">Links</a></li>
+                    </ul>
+                </nav>
                 <div class="container container-cabecalho">
                     <a href="index.html" id="logo">Developwithjr.info</a>
-                    <nav>
-                        <ul id="menu">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="#item">Links</a></li>
-                            <li><a href="#item">Contact</a></li>
-                        </ul>
-                    </nav>
                 </div>
             </header>
-            <div id="banner">
-                <p class="banner-textinside">Unleash Your Inner Mathematician: Building a Simple Calculator with Java 
-                    (For Beginners)</p>
-              </div>
         </div>
         <div class="container">
             <div class="container-main">
@@ -702,6 +704,14 @@ jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                         </article>
                 </main>
             </div>
+            <footer>
+                <div class="container">
+                   <p><strong>JR Developer: <a href="https://github.com/Achuabhijith2003">JRdeveloper</a><strong></p>
+                </div>
+            </footer>
         </div>
+        <script src="node_modules/jquery/dist/jquery.js"></script>
+        <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="js/Script.js"></script>
     </body>
 </html>
