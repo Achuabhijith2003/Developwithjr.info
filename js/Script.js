@@ -1,13 +1,11 @@
 // --------------nav menu --------------------
-const menuButton = document.getElementById('menu-button');
-const sideMenu = document.getElementById('side-menu');
-const closeButton = document.getElementById('close-button');
+const menuToggle = document.getElementById('menu-toggle');
+const nav = document.querySelector('nav');
 
-menuButton.addEventListener('click', function() {
-  sideMenu.classList.toggle('open');
+menuToggle.addEventListener('click', () => {
+  menuToggle.classList.toggle('open');
+  nav.classList.toggle('show');
 });
 
-closeButton.addEventListener('click', function() {
-  sideMenu.classList.remove('open');
-});
+
 // --------------nav menu --------------------

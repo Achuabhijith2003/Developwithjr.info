@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-adsense-account" content="ca-pub-8568607330093795">
+    <title>Building a Simple Calculator with Java</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="icon" href="images/logo.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!------------------------------------------------------Header---------------------------------------------------->
+  <header>
+    <a class="navbar-brand" href="index.html">
+      <span id="bd-title">
+        <h1 style="color: #000; font-size: large;">DevelopWithJR.info</h1>
+        <!-- <img src="images/Logo 2.png" alt="Hopeshore Logo" style="height: 35px;" > -->
+      </span>
+    </a>
+    <nav>
+      <a href="index.html" style=" color: #000;">Home</a>
+      <a href="Blogs.html" style=" color: #000;">Blogs</a>
+      <!-- <a href="#" style=" color: #000;">Offers</a> -->
+      <!-- <a href="aboutus.html" style=" color: #000;">About us</a> -->
+      <!-- <a href="#" style=" color: #000;">Contact Us</a> -->
+    </nav>
+    <button id="menu-toggle" class="menu-toggle">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+  </header>
+      
+      
+<!------------------------------------------------------Header---------------------------------------------------->
+
+<div class="image-container">
+  <img src="images/Cover image.jpeg" alt="Image description" class="image">
+  <div class="text-overlay">
+    <h2>Unleash Your Inner Mathematician: Building a Simple Calculator with Java<br><br></h2>
+    
+  </div>
+</div>
+<!------------------------------------------------------Header---------------------------------------------------->
+    <div class="container">
+        <div class="text-content">
+            <h2>Indroduction</h2><br>
+            <img src="images/Image/calculator full 1.png" alt="Image description" style="height: max-content;" >
+            <p>Ever wondered how those fancy calculators on your computer work? Well, the magic behind them isn't as complex as you might think! In this beginner-friendly blog series, we'll embark on a journey to develop our very own calculator program using Java, a powerful and popular programming language.
+
+              No prior coding experience? No worries! We'll break down everything step-by-step, starting with the fundamentals of Java and gradually building our way to a functional calculator. You'll learn the basics of variables, operators, and control flow, all while putting your newfound knowledge to practical use.</p>
+        </div>
+        <div class="image-container">
+            <p></p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="image-container">
+            <p></p>
+        </div>
+        <div class="text-content">
+            <h2>Step 1: Import Library </h2>
+            <!-- <img src="images/Album/IMG_0233.JPG" alt="Image description"> -->
+            <p><code>import java.awt.Color;<br>
+
+              import java.awt.event.ActionEvent;<br>
+              
+              import java.awt.event.ActionListener;<br>
+              
+              
+              
+              import javax.swing.JButton;<br>
+              
+              import javax.swing.JFrame;<br>
+              
+              import javax.swing.JLabel;<br>
+              
+              import javax.swing.SwingConstants<br></code>
+              <h1>Breakdown of Imported Libraries</h1>
+              <p>This table provides a breakdown of the imported libraries and their functionalities in Java applications.</p>
+              <table>
+                  <thead>
+                      <tr>
+                          <th>Import Statement</th>
+                          <th>Purpose</th>
+                          <th>Key Functionality</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td><code>import java.awt.Color;</code></td>
+                          <td>Provides classes and methods for working with colors.</td>
+                          <td>
+                              <ul>
+                                  <li>Creating color objects with RGB values or predefined names (e.g., Color.RED, Color.BLUE).</li>
+                                  <li>Setting colors for graphical elements like buttons, labels, backgrounds, etc.</li>
+                              </ul>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td><code>import java.awt.event.ActionEvent;</code></td>
+                          <td>Represents a user action (clicking a button, pressing a key).</td>
+                          <td>Handled by event listeners to initiate actions based on user interactions.</td>
+                      </tr>
+                      <tr>
+                          <td><code>import java.awt.event.ActionListener;</code></td>
+                          <td>Defines the interface for classes that listen for actions.</td>
+                          <td>Used to create classes that respond to user actions through the <code>actionPerformed</code> method.</td>
+                      </tr>
+                      <tr>
+                          <td><code>import javax.swing.JButton;</code></td>
+                          <td>Represents a clickable button component in Swing GUIs.</td>
+                          <td>
+                              <ul>
+                                  <li>Displaying text or images on the button.</li>
+                                  <li>Triggering actions when clicked by a user.</li>
+                              </ul>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td><code>import javax.swing.JFrame;</code></td>
+                          <td>Represents the main window or top-level container for Swing GUIs.</td>
+                          <td>
+                              <ul>
+                                  <li>Setting window properties like title, size, and visibility.</li>
+                                  <li>Adding components like buttons, labels, text fields, etc., to create the user interface.</li>
+                              </ul>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td><code>import javax.swing.JLabel;</code></td>
+                          <td>Represents a non-editable text component for displaying information.</td>
+                          <td>
+                              <ul>
+                                  <li>Displaying text, numbers, or images.</li>
+                                  <li>Customizing alignment and font styles.</li>
+                              </ul>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td><code>import javax.swing.SwingConstants;</code></td>
+                          <td>Provides constants for common alignment and orientation in Swing GUIs.</td>
+                          <td>Setting horizontal and vertical alignment of components (e.g., SwingConstants.CENTER, SwingConstants.LEFT).</td>
+                      </tr>
+                  </tbody>
+              </table></p>
+        </div>
+    </div>
+    <!--------------------------------------------------Physio Therapy------------------------------------------->
+    <div class="container">
+        <div class="text-content">
+            <h2>Step 2: Create a Class Declare the Variables</h2>
+            <p>create a class and implement ActionListener in the class
+              <code><br> <br>public class Calculater implements ActionListener { <br>
+
+   
+
+                private static final String Newvalue = null;<br>
+            
+            
+            
+                boolean isOperaterclicked=false;<br>
+            
+               
+            
+                JFrame jf;<br>
+            
+                JLabel Display;<br>
+            
+               
+            
+               
+            
+                JButton Sevenbutton;<br>
+            
+                JButton Eightbutton;<br>
+            
+                JButton ninebutton;<br>
+            
+                JButton fourbutton;<br>
+            
+                JButton fivebutton;<br>
+            
+                JButton sixbutton;<br>
+            
+                JButton onebutton;<br>
+            
+                JButton twobutton;<br>
+            
+                JButton threebutton;<br>
+            
+                JButton dotbutton;<br>
+            
+                JButton zerobutton;<br>
+            
+                JButton equalbutton;<br>
+            
+                JButton divisionbutton;<br>
+            
+                JButton multipicationbutton;<br>
+            
+                JButton minesbutton;<br>
+            
+                JButton pulsebutton;<br>
+            
+                JButton clearButton;<br>
+            
+                JButton SquareButton;<br>
+            
+               
+            
+                String oldvalue;<br>
+            
+                int pulse=0;<br>
+            
+                int mini=0;<br>
+            
+                int mult=0;<br>
+            
+                int divi=0;<br></code>
+            </p>
+        </div>
+        <div class="image-container">
+            <p></p>
+        </div>
+    </div>
+    <!--------------------------------------------------Sample------------------------------------------->
+    <!-- <div class="container">
+        <div class="image-container">
+            <p></p>
+        </div>
+        <div class="text-content">
+            <h2>Speech Therapy</h2>
+            <img src="images/Album/IMG_0233.JPG" alt="Image description">
+            <p>Speech-language therapy helps to 
+                coordinate the mechanics of speech with the 
+                social use of language. Speech therapy focuses 
+                on:
+                <p style="font-weight: bold;">Ability to understand language</p>
+                <p style="font-weight: bold;">  Ability to use ideas to express</p>
+                When a speech or language problem is 
+                identified and treated early in a child, it is unlikely 
+                that the problem will persist or get worse</p>
+        </div>
+    </div> -->
+    <!--------------------------------------------------Sample------------------------------------------->
+    <div class="container">
+        <div class="text-content">
+            <h2>Step 3: Create a Constructor</h2>
+            <p>Create a constructor in the name of the classs
+              <code><br>Calculater() {</code>
+            </p>
+        </div>
+        <div class="image-container">
+            <p></p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="image-container">
+            <p></p>
+        </div>
+        <div class="text-content">
+            <h2>Step 4: Create Frame</h2>
+            <p><code><br>jf=new JFrame("Calculator");<br>
+
+              jf.setLayout(null);<br>
+      
+              jf.setSize(600,600);<br>
+      
+              jf.setLocation(1300,200);<br>
+      
+              jf.setVisible(true);<br>
+      
+              jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);<br>
+            </code></p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="image-container">
+            <p></p>
+        </div>
+        <div class="text-content">
+            <h2> Step 5: Create buttons and label</h2>
+            <p><code>  <br> <br> Display=new JLabel("");  <br>
+
+              Display.setBounds(30, 50, 540, 40);<br>
+      
+              Display.setBackground(Color.orange);<br>
+      
+              Display.setOpaque(true);<br>
+      
+              Display.setHorizontalAlignment(SwingConstants.RIGHT);<br>
+      
+              Display.setForeground(Color.red);<br>
+      
+              jf.add(Display);<br>
+      
+             
+      
+             
+      
+              Sevenbutton=new JButton("7");<br>
+      
+              Sevenbutton.setBounds(40, 150, 50, 50); //button7<br>
+      
+              Sevenbutton.addActionListener(this);<br>
+      
+              jf.add(Sevenbutton);<br>
+      
+             
+      
+              Eightbutton=new JButton("8");<br>
+      
+              Eightbutton.setBounds(100, 150, 50, 50);  //button8<br>
+      
+              Eightbutton.addActionListener(this);<br>
+      
+              jf.add(Eightbutton);<br>
+      
+             
+      
+              ninebutton=new JButton("9");<br>
+      
+              ninebutton.setBounds(160, 150, 50, 50);    //button9<br>
+      
+              ninebutton.addActionListener(this);<br>
+      
+              jf.add(ninebutton);<br>
+      
+             
+      
+              fourbutton=new JButton("4");<br>
+      
+              fourbutton.setBounds(40, 230, 50, 50);      //button4<br>
+      
+              fourbutton.addActionListener(this);<br>
+      
+              jf.add(fourbutton);<br>
+      
+             
+      
+              fivebutton=new JButton("5");<br>
+      
+              fivebutton.setBounds(100, 230, 50, 50);     //button5<br>
+      
+              fivebutton.addActionListener(this);<br>
+      
+              jf.add(fivebutton);<br>
+      
+             
+      
+              sixbutton=new JButton("6");<br>
+      
+              sixbutton.setBounds(160, 230, 50, 50);      //button6<br>
+      
+              sixbutton.addActionListener(this);<br>
+      
+              jf.add(sixbutton);<br>
+      
+             
+      
+              onebutton=new JButton("1");<br>
+      
+              onebutton.setBounds(40, 310, 50, 50);       //button1<br>
+      
+              onebutton.addActionListener(this);<br>
+      
+              jf.add(onebutton);<br>
+      
+             
+      
+              twobutton=new JButton("2");<br>
+      
+              twobutton.setBounds(100, 310, 50, 50);       //button2<br>
+      
+              twobutton.addActionListener(this);<br>
+      
+              jf.add(twobutton);<br>
+      
+             
+      
+              threebutton=new JButton("3");<br>
+      
+              threebutton.setBounds(160, 310, 50, 50);      //button3<br>
+      
+              threebutton.addActionListener(this);<br>
+      
+              jf.add(threebutton);<br>
+      
+             
+      
+              dotbutton=new JButton(".");<br>
+      
+              dotbutton.setBounds(40, 390, 50, 50);       //button.<br>
+      
+              dotbutton.addActionListener(this);<br>
+      
+              jf.add(dotbutton);<br>
+      
+             
+      
+              zerobutton=new JButton("0");<br>
+      
+              zerobutton.setBounds(100, 390, 50, 50);      //button0<br>
+      
+              zerobutton.addActionListener(this);<br>
+      
+              jf.add(zerobutton);<br>
+      
+             
+      
+              equalbutton=new JButton("=");<br>
+      
+              equalbutton.setBounds(280, 390, 60, 60);       //button=<br>
+      
+              equalbutton.addActionListener(this);<br>
+      
+              jf.add(equalbutton);<br>
+      
+             
+      
+              divisionbutton=new JButton("/");<br>
+      
+              divisionbutton.setBounds(220, 150, 50, 50);    //button/<br>
+      
+              divisionbutton.addActionListener(this);<br>
+      
+              jf.add(divisionbutton);<br>
+      
+             
+      
+              multipicationbutton=new JButton("*");<br>
+      
+              multipicationbutton.setBounds(220, 230, 50, 50);    //button*<br>
+      
+              multipicationbutton.addActionListener(this);<br>
+      
+              jf.add(multipicationbutton);<br>
+      
+             
+      
+              minesbutton=new JButton("-");<br>
+      
+              minesbutton.setBounds(220, 310, 50, 50);    //button-<br>
+      
+              minesbutton.addActionListener(this);<br>
+      
+              jf.add(minesbutton);<br>
+      
+             
+      
+              pulsebutton=new JButton("+");<br>
+      
+              pulsebutton.setBounds(220, 390, 50, 50);    //button+<br>
+      
+              pulsebutton.addActionListener(this);<br>
+      
+              jf.add(pulsebutton);<br>
+      
+             
+      
+              clearButton =new JButton("clear");<br>
+      
+              clearButton.setBounds(160, 390, 50, 50);<br>
+      
+              clearButton.addActionListener(this);<br>
+      
+              jf.add(clearButton);    <br>
+      
+             
+      
+              SquareButton =new JButton("Square");<br>
+      
+              SquareButton.setBounds(280, 150, 50, 50);<br>
+      
+              SquareButton.addActionListener(this);<br>
+      
+              jf.add(SquareButton);<br></code></p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="image-container">
+            <p></p>
+        </div>
+        <div class="text-content">
+            <h2> Step 6: Create another class name actionPerformed</h2>
+            <p><code><br><br>@Override<br>
+
+              public void actionPerformed(ActionEvent e) { <br></code></p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="image-container">
+            <p></p>
+        </div>
+        <div class="text-content">
+            <h2>Step 7: Working of buttons and calculation operation</h2>
+            <p><code><br><br>if(e.getSource()==Sevenbutton) {<br>
+
+              if(isOperaterclicked) {<br>
+  
+                  Display.setText("7");<br>
+  
+                  isOperaterclicked=false;<br>
+  
+              }else {<br>
+  
+                  Display.setText(Display.getText()+"7");<br>
+  
+              }<br>
+  
+             
+  
+          }else if(e.getSource()==Eightbutton) {
+  
+              if(isOperaterclicked) {
+  
+                  Display.setText("8");
+  
+                  isOperaterclicked=false;
+  
+              }else {
+  
+                  Display.setText(Display.getText()+"8");
+  
+              }
+  
+          }else if(e.getSource()==ninebutton) {<br>
+  
+              if(isOperaterclicked) {<br>
+  
+                  Display.setText("9");<br>
+  
+                  isOperaterclicked=false;<br>
+  
+              }else {<br>
+  
+                  Display.setText(Display.getText()+"9");<br>
+  
+              }<br>
+  
+          }else if (e.getSource()==fourbutton) {<br>
+  
+              if(isOperaterclicked) {<br>
+  
+                  Display.setText("4");<br>
+  
+                  isOperaterclicked=false;<br>
+  
+              }else {<br>
+  
+                  Display.setText(Display.getText()+"4");<br>
+  
+              }<br>
+  
+          }else if (e.getSource()==fivebutton) {<br>
+  
+              if(isOperaterclicked) {<br>
+  
+                  Display.setText("5");<br>
+  
+                  isOperaterclicked=false;<br>
+  
+              }else {<br>
+  
+                  Display.setText(Display.getText()+"5");<br>
+  
+              }<br>
+  
+          }else if (e.getSource()==sixbutton) {<br>
+  
+              if(isOperaterclicked) {<br>
+  
+                  Display.setText("6");<br>
+  
+                  isOperaterclicked=false;<br>
+  
+              }else {<br>
+  
+                  Display.setText(Display.getText()+"6");<br>
+  
+              }<br>
+  
+          }else if (e.getSource()==onebutton) {<br>
+  
+              if(isOperaterclicked) {<br>
+  
+                  Display.setText("1");<br>
+  
+                  isOperaterclicked=false;<br>
+  
+              }else {<br>
+  
+                  Display.setText(Display.getText()+"1");<br>
+  
+              }<br>
+  
+          }else if (e.getSource()==twobutton) {<br>
+  
+              if(isOperaterclicked) {<br>
+  
+                  Display.setText("2");<br>
+  
+                  isOperaterclicked=false;<br>
+  
+              }else {<br>
+  
+                  Display.setText(Display.getText()+"2");<br>
+  
+              }<br>
+  
+          }else if (e.getSource()==threebutton) {<br>
+  
+              if(isOperaterclicked) {<br>
+  
+                  Display.setText("3");<br>
+  
+                  isOperaterclicked=false;<br>
+  
+              }else {<br>
+  
+                  Display.setText(Display.getText()+"3");<br>
+  
+              }<br>
+  
+          }else if (e.getSource()==zerobutton) {<br>
+  
+              if(isOperaterclicked) {<br>
+  
+                  Display.setText("0");<br>
+  
+                  isOperaterclicked=false;<br>
+  
+              }else {<br>
+  
+                  Display.setText(Display.getText()+"0");<br>
+  
+              }<br>
+  
+          }else if (e.getSource()==clearButton) {<br>
+  
+              Display.setText("");<br>
+  
+          }else if (e.getSource()==dotbutton) {<br>
+  
+              if(isOperaterclicked) {<br>
+  
+                  Display.setText(".");<br>
+  
+                  isOperaterclicked=false;<br>
+  
+              }else {<br>
+  
+                  Display.setText(Display.getText()+".");<br>
+  
+              }<br>
+  
+          }else if (e.getSource()==divisionbutton) {<br>
+  
+              isOperaterclicked=true;<br>
+  
+              oldvalue=Display.getText();<br>
+  
+              divi=1;<br>
+  
+             
+  
+          }else if (e.getSource()==multipicationbutton) {<br>
+  
+              isOperaterclicked=true;<br>
+  
+              oldvalue=Display.getText();<br>
+  
+              mult=1;<br>
+  
+             
+  
+          }else if (e.getSource()==minesbutton) {<br>
+  
+              isOperaterclicked=true;<br>
+  
+              oldvalue=Display.getText();<br>
+  
+              mini=1;<br>
+  
+             
+  
+             
+  
+          }else if (e.getSource()==pulsebutton) {<br>
+  
+               
+  
+              isOperaterclicked=true;<br>
+  
+              oldvalue=Display.getText();<br>
+  
+              pulse=1;<br>
+  
+             
+  
+          }else if (e.getSource()==equalbutton) {<br>
+  
+              String Newvalue=Display.getText();<br>
+  
+              float NewvalueF=Float.parseFloat(Newvalue);<br>
+  
+               float oldvalueF=Float.parseFloat(oldvalue);<br>
+  
+              if(pulse==1) {<br>
+  
+                 
+  
+                   Float result = oldvalueF+NewvalueF;<br>
+  
+                  Display.setText(result+"");<br>
+  
+              }else if(mini==1) {<br>
+  
+                 
+  
+                   Float result = oldvalueF-NewvalueF;<br>
+  
+                  Display.setText(result+"");<br>
+  
+              }else if(mult==1) {<br>
+  
+                 
+  
+                   Float result = oldvalueF*NewvalueF;<br>
+  
+                  Display.setText(result+"");<br>
+  
+              }else if(divi==1) {<br>
+  
+                 
+  
+                   Float result = oldvalueF/NewvalueF;<br>
+  
+                  Display.setText(result+"");<br>
+  
+              }<br>
+  
+             
+  
+          }else if(e.getSource()==SquareButton) {<br>
+  
+              isOperaterclicked=true;<br>
+  
+              oldvalue=Display.getText();<br>
+  
+               float oldvalueF=Float.parseFloat(oldvalue);<br>
+  
+              float result1=oldvalueF*oldvalueF;<br>
+  
+              Display.setText(result1+"");<br>
+  
+          }<br></code></p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="image-container">
+            <p></p>
+        </div>
+        <div class="text-content">
+            <h2>Step 8: Create main class and call the constructor</h2>
+            <p><br><br><code>    public static void main(String[] args) {<br>
+
+              new Calculater();<br>
+            } <br></code></p>
+        </div>
+    </div>
+
+    <div class="container">
+      <div class="image-container">
+          <p></p>
+      </div>
+      <div class="text-content">
+          <h2>Step 9:Run the Program</h2>
+          <img src="images/Image/calculator full 1.png" alt="Image description" style="height: max-content;" >
+          <p></p>
+      </div>
+  </div>
+<!------------------------------------------------------Footer---------------------------------------------------->
+<footer>
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <h1 style="color: #000; font-size: large;">DevelopWithJR.info<br></h1>
+      </div>
+      <div class="footer-info">
+        <div class="footer-about">
+          <p></p>
+         </div>
+        <div class="footer-links">
+          <h4>Pages</h4>
+          <ul>
+            <li><a href="index.html" style=" color: #000;">Home</a></li><br>
+            <li><a href="Blogs.html" style=" color: #000;">Blogs</a></li><br>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p>
+          <a href="mailto:jrdevelop2003@gmail.com" style=" color: #000;">jrdevelop2003@gmail.com</a><br>
+          <!-- <a href="tel:+918074786868" style=" color: #000;">+918074786868</a> -->
+        </p>
+      </div>
+    </div>
+    <div class="footer-social">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <!-- https://www.linkedin.com/in/abhijith-jr-7805962a2/ -->
+    </div>
+    <div class="footer-copyright">
+      <p>&copy; Copyright 2024 by DevelopWithJR</p>
+    </div>
+  </footer>
+</footer>
+  <!------------------------------------------------------Footer---------------------------------------------------->
+  
+  
+  <script src="node_modules\jquery\dist\jquery.js"></script>
+  <script src="node_modules\bootstrap\dist\js\bootstrap.js"></script>
+  <script src="js/Script.js"></script>
+  </body>
+  </html>

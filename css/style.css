@@ -1,0 +1,613 @@
+*{
+    margin:0px;
+    padding:0px;
+    /* box-sizing:border-box; */
+    /* background-color: ; */
+}  
+.body{
+    background-color: #ca0075;
+    margin: 0;
+} 
+/*------------------------------------------------------Header----------------------------------------------------*/
+#bd-title{
+    font-size:24px;
+}
+
+
+.navbar-brand {
+    display: flex; /* Use flexbox for alignment and responsiveness */
+    align-items: center; /* Align logo and text vertically */
+    text-decoration: none; /* Remove default underline from anchor tag */
+  }
+  
+  .navbar-brand img {
+    max-height: 50px; /* Set maximum logo height */
+    width: auto; /* Allow logo width to adjust proportionally */
+    margin-right: 10px; /* Add space between logo and text (optional) */
+  }
+  
+  /* Responsive adjustments for smaller screens (iPhones and similar): */
+  @media only screen and (max-width: 768px) {
+    .navbar-brand {
+      /* Adjust these properties as needed for your specific layout */
+      flex-direction: column; /* Stack logo and text vertically on small screens */
+      align-items: center;  /* Center content in the column */
+    }
+  
+    .navbar-brand img {
+      margin-bottom: 5px; /* Add spacing between logo and text on smaller screens */
+    }
+  }
+  
+  .image-box {
+    position: relative; /* Allows positioning of the overlay */
+  }
+  
+  /* Default styles for all screen sizes */
+  .image-box img {
+    width: 100%;
+    height: 150%; /* Maintain image aspect ratio */
+  }
+  @media (max-width: 768px) {
+    h2#banner-text {
+      font-size: 1.2em;  /* Adjust as needed for phone view */
+    }
+  }
+
+  .image-box .text-overlay button {
+    font-size: 15px;
+    background-color: #ffffff00 ; /* Removes background color */
+    border: 1px solid #ffffff;
+    border-radius: 25px; /* Removes border */
+    border-color: #ffffff;
+    color: inherit; /* Inherits color from parent element (likely dark) */
+    padding: 10px 20px; /* Adjust padding as needed */
+    cursor: pointer; /* Indicates clickable element */
+    position: absolute; /* Make button position relative to parent */
+  bottom: 25px; /* Place button 10px from the bottom */
+  left: 50%; /* Center button horizontally (adjust if needed) */
+  transform: translateX(-50%); /* Offset button to compensate for centering */
+
+    transition: background-color 0.2s ease-in-out; /* Smooth transition */
+  
+    /* Optional: Add a subtle border on hover */
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.1); /* Slightly transparent background on hover */ /* Thin border on hover */
+      bottom: 25px; /* Place button 10px from the bottom */
+    }
+  }
+  
+  
+  
+  .text-overlay {
+    position: absolute;
+    top: 0;
+    left: 10;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0); /* Semi-transparent black background */
+    color: white; /* White text color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Media queries for phone responsiveness */
+  @media (max-width: 768px) {
+    .image-box {
+      width: 100vw; /* Set width to 100% of viewport width */
+      height: auto; /* Adjust height as needed for phone layout */
+    }
+  }
+  
+  
+
+@media all and (min-width:900px){
+    .mrl{
+        margin-left:200px;
+    }
+    .reg2{
+        position:absolute;
+        right:50px;
+    }
+    .reg1{
+        position:absolute;
+        right:200px;
+    }
+}
+/*------------------------------------------------------Header----------------------------------------------------*/
+
+/*------------------------------------------------------Nav----------------------------------------------------*/
+@media all and (min-width:991px){
+    .nav2{
+        background-color:#f2f2f2;
+        height:30px;
+        overflow: hidden;
+    }
+    .nav2 > ul >li{
+        display:inline-block;
+        margin-left:50px;
+    }
+    .nav2 > ul >li > a:hover{
+        text-decoration: none;
+        list-style: none;
+    }
+    nav > ul >li >a{
+        font-size:15px;
+        font-weight:bold;
+        color:black;
+    }
+    #one{
+        margin-left:200px;
+    
+    }
+}
+@media all and (max-width:1280px){
+    .nav2{
+        display:none;
+    }
+}
+/*------------------------------------------------------Nav----------------------------------------------------*/
+/*------------------------------------------------------Banner----------------------------------------------------*/
+
+.banner-link{
+    text-decoration: none;
+    list-style:none;
+    object-fit: contain;
+}
+/*------------------------------------------------------Banner----------------------------------------------------*/
+
+/*------------------------------------------------------Card2---------------------------------------------------->*/
+.cd-h4{
+    font-weight:bold; 
+    margin:5px; 
+    padding-top:5px;
+    padding-left:20px; 
+    padding-bottom:20px;
+    color: rgb(0, 0, 0);
+    max-width:330px;
+    max-height:40px;
+    border-radius:30px;
+    text-align: center;
+    align-items: center;
+}
+
+
+.cd-title{
+    font: 1em Arial, sans-serif;
+    text-align: center;
+}
+
+.txt-sz{
+    position: absolute;
+    align-content: center;
+}
+
+.bb-btn{
+    position: absolute;
+    bottom: 0px;
+    margin: 10 auto ;
+  border-radius: 50px; /* Adjust the radius for your desired roundness */
+  padding: 10px 20px; /* Adjust padding as needed */
+  background-color: #cda05c;
+  justify-content: space-around;
+  
+}
+/* box buy product */
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 10%;
+    margin-right: 0%;
+    /* border-radius: 5px */
+}
+
+.product-box {
+    width: 45%; /* Adjust width as needed */
+    height: 95%;
+    margin: 5px;
+    background-color: #c6bcf78e;
+    border-radius: 25px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: justify; 
+}
+
+img {
+    width: 100%;
+    height: 200px; /* Adjust height as needed */
+    object-fit: cover; /* Scale image to fit box */
+    border-radius: 5px;
+}
+
+.product-info {
+    padding: 10px;
+}
+
+.price {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.buy-button {
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+    padding: 10px 15px;
+    border: none;
+    border-radius: 35px;
+    cursor: pointer;
+    font-size: 10px;
+}
+.buy-button:hover {
+    transform: scale(1.05);
+}
+
+/*------------------------------------------------------Card2----------------------------------------------------*/
+
+
+
+@media all and (max-width:500px){
+    .mm{
+        margin: top 10px;
+    }
+}   
+
+
+
+
+
+/* phone re */
+/* Responsive layout for mobile (2 boxes per row) */
+@media only screen and (max-width: 768px) {
+    .product-box {
+        width: 85%;
+    }
+}
+/* phone re */
+
+
+
+
+
+
+/*------------------------------------------------Footer------------------------------------------------- */
+/* Footer styles */
+.footer {
+    background-color: #ffffff;
+    padding: 30px 0;
+    text-align: center;  /* Center content horizontally */
+  }
+  
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;  /* Allow elements to wrap on smaller screens */
+    justify-content: space-around;  /* Distribute elements evenly */
+    max-width: 1000px;
+    margin: 1px auto;  /* Center the footer horizontally */
+  }
+  
+  .footer-logo img {
+    width: 165px;  /* Adjust image width as needed */
+  }
+  
+  .footer-about p,
+  .footer-links ul,
+  .footer-contact p,
+  .footer-copyright p {
+    margin-bottom: 10px;
+  }
+  
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-links li {
+    display: inline-block;
+    margin-right: 15px;
+  }
+  
+  .footer-social {
+    margin-top: 15px;
+    font-display: inherit;
+  }
+  
+  .footer-social a {
+    color: #000;
+    margin-right: 10px;
+    font-size: 20px;
+  }
+  
+  .footer-social a:hover {
+    color: #333;
+  }
+  
+  .footer-copyright {
+    margin-top: auto;  /* Push copyright text to bottom */
+  }
+  @media only screen and (max-width: 768px) {
+    .footer-about p,
+    .footer-links li,
+    .footer-contact p,
+    .footer-copyright p {
+      font-size: 14px;  /* Adjust as needed */
+    }
+    
+    .footer-social a {
+      font-size: 25px;  /* Adjust as needed */
+    }
+  }
+  
+/*------------------------------------------------Footer------------------------------------------------- */
+
+/* ----------------------------------- nav menu---------------------------------------------------------- */
+
+@media only screen and (max-width: 768px) {
+  #menu-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;  }
+
+#side-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;  width: 250px;  height: 100vh;  background-color: #fff;
+    transition: all 0.3s ease-in-out;  }
+
+#side-menu.open {  left: 0;
+}
+
+#side-menu ul {
+    list-style: none;
+    padding: 20px;
+}
+
+#side-menu li {
+    margin-bottom: 15px;
+}
+
+#side-menu a {
+    display: block;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+}
+
+/* ----------------------------------- nav menu---------------------------------------------------------- */
+
+/* Aboutus */
+/* Shared styles */
+.content-wrapper,
+.text-section,
+.image-section {
+  display: flex; /* Use flexbox for layout control */
+  align-items: center; /* Vertically center content within sections */
+}
+
+.content-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 5px; /* Add a subtle border radius for visual appeal */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a light box-shadow for depth */
+}
+
+.text-section {
+  flex: 1; /* Make text section take up remaining space */
+  padding-right: 20px;
+}
+
+.image-section {
+  justify-content: flex-end; /* Align image to the right within its section */
+}
+
+.image-section img {
+  height: 35px; /* Maintain image height */
+  border-radius: 50%; /* Add a circular shape to the image */
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+p {
+  line-height: 1.5;
+}
+
+/* Phone Styles (Media Query) */
+@media only screen and (max-width: 768px) {
+  .content-wrapper {
+    flex-direction: column; /* Stack sections vertically on small screens */
+  }
+
+  .text-section,
+  .image-section {
+    width: 100%; /* Allow full width for sections on phones */
+    padding: 15px;
+  }
+
+  .text-section {
+    padding-right: 0; /* Remove right padding for smaller screens */
+    margin-bottom: 15px;
+  }
+
+  .image-section {
+    justify-content: center; /* Center image horizontally on phones */
+  }
+}
+
+/* about us para */
+#about-para {
+  max-width: 1200px; /* Adjust as needed for wider content */
+  margin: 0 auto; /* Center the section horizontally */
+  padding: 20px;
+  font-family: sans-serif; /* Choose a suitable font */
+  line-height: 1.5; /* Adjust line spacing for readability */
+}
+
+#about-para h2 {
+  margin-bottom: 15px; /* Add space below heading */
+  font-size: 1.8em; /* Adjust heading size as needed */
+}
+
+#about-para p {
+  margin-bottom: 10px; /* Add space between paragraphs */
+}
+
+/* about us para */
+/* Aboutus */
+
+/* Header */
+header {
+  background-color: #ffffff;
+  color: #000000;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0;
+}
+
+nav {
+  display: flex;
+  list-style: none;
+}
+
+nav a {
+  color: inherit;
+  text-decoration: none;
+  padding: 10px 20px;
+}
+
+nav a:hover {
+  background-color: #ddd;
+}
+
+/* Responsive Styles */
+
+@media (max-width: 768px) {
+  nav {
+    display: none; /* Hide navigation bar on small screens */
+  }
+
+  .show {
+    position: relative;
+    width: 100%;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    display: flex; /* Makes the navigation links visible */
+  }
+  
+
+  .menu-toggle {
+    display: grid; /* Show menu toggle button on small screens */
+    padding: 10px;
+    cursor: pointer; /* Make it clickable */
+  }
+
+  .bar {
+    display: block; /* Show the bars for the menu toggle button */
+    width: 25px;
+    height: 3px;
+    background-color: #000000;
+    margin-bottom: 5px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .menu-toggle.open .bar:first-child {
+    transform: rotate(45deg) translate(8px, 8px);
+  }
+
+  .menu-toggle.open .bar:last-child {
+    transform: rotate(-45deg) translate(8px, -8px);
+  }
+
+  .menu-toggle.open .bar:nth-child(2) {
+    opacity: 0;
+  }
+}
+
+
+/* header */
+
+/* overlay text image */
+/* Image container */
+.image-container {
+  position: relative; /* Enable positioning of overlay elements */
+  overflow: hidden; /* Prevent text overlay from overflowing the image */
+}
+
+.image-container img.image {
+  width: 100%; /* Display image full-width */
+  height: auto; /* Maintain image aspect ratio */
+}
+
+/* Text overlay */
+.text-overlay {
+  position: absolute; /* Position overlay on top of the image */
+  bottom: 20px; /* Position text content at bottom with some space */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, 0); /* Adjust positioning for centering */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  color: white; /* Text color */
+  padding: 20px; /* Add some padding for visual appeal */
+  text-align: center; /* Center text content */
+}
+
+.text-overlay h2 {
+  margin-bottom: 10px; /* Space below heading */
+  font-size: 3.5em; /* Adjust heading size as needed */
+}
+
+.text-overlay p {
+  line-height: 1.5; /* Adjust line spacing for readability */
+}
+
+/* Button */
+.text-overlay button {
+  background-color: transparent; /* Transparent background */
+  color: white; /* Button text color */
+  border: 2px solid #fff; /* White border */
+  border-radius: 5px; /* Add rounded corners */
+  padding: 10px 20px; /* Button padding */
+  cursor: pointer; /* Indicate hover effect */
+  transition: background-color 0.3s ease-in-out; /* Add smooth transition on hover */
+  text-align: center;
+  flex-wrap: wrap-reverse;
+}
+
+
+
+.text-overlay button:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* White background with slight opacity on hover */
+}
+
+/* Phone Styles (Media Query) */
+@media only screen and (max-width: 768px) {
+  .text-overlay {
+    /* Wrap text content on smaller screens */
+    width: 100%;
+    white-space: wrap;
+    word-break: break-word;
+  }
+
+  .text-overlay h2 {
+    margin-bottom: 10px; /* Space below heading */
+    font-size: 1.5em; /* Adjust heading size as needed */
+  }
+}
