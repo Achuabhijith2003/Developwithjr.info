@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-adsense-account" content="ca-pub-8568607330093795">
+    <title>Building a Simple Calculator with Java</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="icon" href="images/logo.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!------------------------------------------------------Header---------------------------------------------------->
+  <header>
+    <a class="navbar-brand" href="index.html">
+      <span id="bd-title">
+        <h1 style="color: #000; font-size: large;">DevelopWithJR.info</h1>
+        <!-- <img src="images/Logo 2.png" alt="Hopeshore Logo" style="height: 35px;" > -->
+      </span>
+    </a>
+    <nav>
+      <a href="index.html" style=" color: #000;">Home</a>
+      <a href="Blogs.html" style=" color: #000;">Blogs</a>
+      <!-- <a href="#" style=" color: #000;">Offers</a> -->
+      <!-- <a href="aboutus.html" style=" color: #000;">About us</a> -->
+      <!-- <a href="#" style=" color: #000;">Contact Us</a> -->
+    </nav>
+    <button id="menu-toggle" class="menu-toggle">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+  </header>
+      
+      
+<!------------------------------------------------------Header---------------------------------------------------->
+
+<div class="image-container">
+  <img src="images/Cover image.jpeg" alt="Image description" class="image">
+  <div class="text-overlay">
+    <h2>Empowering Your Python Projects with Gemini: A Guide to Integration and Best Practices<br><br></h2>
+  </div>
+</div>
+
+
+    <div class="container">
+        <div class="image-container">
+            <p></p>
+        </div>
+        <div class="text-content">
+            <h2>Introduction</h2>
+            <!-- <img src="images/Album/IMG_0233.JPG" alt="Image description"> -->
+            <h1>Unleash the Power of Gemini with Python</h1>
+  <p>This guide equips you to integrate Google's Gemini language model into your Python projects, unlocking new AI-powered functionalities.</p>
+
+  <h2>Gemini's Capabilities</h2>
+  <ul>
+    <li>Text Generation: Create poems, code, scripts, emails, and more.</li>
+    <li>Multimodal Processing: Combine text with images for richer understanding.</li>
+    <li>Conversational AI: Design engaging chatbots and dialogue systems.</li>
+    <li>Question Answering: Extract insights from vast amounts of text data.</li>
+    <li>And More! The possibilities are endless.</li>
+  </ul>
+
+  <h2>Best Practices for Integration</h2>
+  <h3>Environment Setup and API Access</h3>
+  <ol>
+    <li>Install Python 3.9 or later.</li>
+    <li>Install the `google-generativeai` package: `pip install google-generativeai`.</li>
+    <li>Obtain an API key from Google AI Studio (https://cloud.google.com/generative-ai-studio) and store it securely (environment variables recommended).</li>
+  </ol>
+
+  <h3>Crafting Effective Prompts</h3>
+  <ul>
+    <li>Provide clear and concise instructions to guide Gemini's responses.</li>
+    <li>Use natural language that reflects your desired outcome.</li>
+    <li>Break down complex tasks into smaller prompts for better results.</li>
+  </ul>
+
+  <h3>Leveraging Multimodal Inputs (Optional)</h3>
+  <ul>
+    <li>Combine text prompts with images for enhanced understanding.</li>
+    <li>Gemini can process various image formats (JPEG, PNG, etc.).</li>
+    <li>Experiment with different image-text combinations to see their influence.</li>
+  </ul>
+
+  <h3>Exploring Response Streaming (Optional)</h3>
+  <p>Enable real-time feedback during model execution for iterative refinement, especially for long-running tasks or creative text generation.</p>
+
+  <h3>Handling Errors and Unexpected Results</h3>
+  <ul>
+    <li>Implement error handling to manage API rate limits or unexpected model responses.</li>
+    <li>Consider logging errors and retry mechanisms for better application stability.</li>
+  </ul>
+
+  <h3>Continuous Experimentation and Refinement</h3>
+  <p>Iterate on prompts, configurations, and use cases to optimize Gemini's performance for your specific needs. Experimentation leads to a better understanding of Gemini's strengths and how to tailor it to your applications.</p>
+        </div>
+    </div> 
+
+
+    <div class="container">
+        <div class="image-container">
+            <p></p>
+        </div>
+        <div class="text-content">
+            <h2>Step 1: Import Library </h2>
+            <p>Install the google-generativeai package using pip install google-generativeai.<br><br>
+
+                import the package in code
+                <code>import google.generativeai as genai</code></p>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="image-container">
+            <p></p>
+        </div>
+        <div class="text-content">
+            <h2>Step 2: Get API Key from Gemini</h2>
+            <img src="images/Image/gemini key.png" alt="Image description" style="object-fit: contain; height: max-content;">
+            <p><a href="https://aistudio.google.com/app/apikey">Get API key click here</a><br>
+                <code># API Key Configuration (Replace with your actual API key)<br>
+
+                    API_KEY = "Your API Key"<br>
+                  
+                    genai.configure(api_key=API_KEY)<br></code></p>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="image-container">
+            <p></p>
+        </div>
+        <div class="text-content">
+            <h2>Step 3: create a function and pass the promt abd return the response</h2>
+            <p><br>
+                <code>	# gemini respones method<br><br>
+
+                    def gpt_response(prompt):<br>
+                    
+                      """Generates a response using the generativeai library with safety settings.<br>
+                    
+                    
+                    
+                      Args:<br>
+                    
+                          prompt: The user's input prompt for the chatbot.<br>
+                    
+                    
+                    
+                      Returns:<br>
+                    
+                          The response generated by the Gemini-1.0-pro model.<br>
+                    
+                      """<br>
+                    
+                    
+                    
+                      # API Key Configuration (Replace with your actual API key)<br>
+                    
+                      API_KEY = "AIzaSyClZF**********O***F4eAM"<br>
+                    
+                      genai.configure(api_key=API_KEY)<br>
+                    
+                    
+                    
+                      # Model Configuration<br><br>
+                    
+                      generation_config = {<br>
+                    
+                          "temperature": 0.9,  # Controls randomness in responses<br>
+                    
+                          "top_p": 1,          # Focuses generation on high probability tokens<br>
+                    
+                          "top_k": 1,          # Limits considered tokens at each step<br>
+                    
+                          "max_output_tokens": 2048,  # Maximum length of generated text<br>
+                    
+                      }<br><br>
+                    
+                    
+                    
+                      safety_settings = [<br>
+                    
+                          {<br>
+                    
+                              "category": "HARM_CATEGORY_HARASSMENT",<br>
+                    
+                              "threshold": "BLOCK_MEDIUM_AND_ABOVE"<br>
+                    
+                          },<br>
+                    
+                          {<br>
+                    
+                              "category": "HARM_CATEGORY_HATE_SPEECH",<br>
+                    
+                              "threshold": "BLOCK_MEDIUM_AND_ABOVE"<br>
+                    
+                          },<br>
+                    
+                          {<br>
+                    
+                              "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",<br>
+                    
+                              "threshold": "BLOCK_MEDIUM_AND_ABOVE"<br>
+                    
+                          },<br><br>
+                    
+                          {<br>
+                    
+                              "category": "HARM_CATEGORY_DANGEROUS_CONTENT",<br>
+                    
+                              "threshold": "BLOCK_MEDIUM_AND_ABOVE"<br>
+                    
+                          },<br>
+                    
+                      ]<br><br>
+                    
+                    
+                    
+                      # Create the GenerativeModel Instance with Safety Measures<br><br>
+                    
+                      model = genai.GenerativeModel(<br>
+                    
+                          model_name="gemini-1.0-pro",<br>
+                    
+                          generation_config=generation_config,<br>
+                    
+                          safety_settings=safety_settings<br>
+                    
+                      )<br><br>
+                    
+                    
+                    
+                      # Start a Conversation (Optional for Multi-Turn Interactions)<br>
+                    
+                      convo = model.start_chat(history=[])  # Empty history for new conversation<br>
+                    
+                    
+                    
+                      # Send the User's Prompt and Return the Model's Response<br>
+                    
+                      response = convo.send_message(prompt)<br>
+                    
+                      print ("AI: ", response.text)<br>
+                    
+                      text_to_speech(response.text)<br>
+                    
+                      return response.text<br></code></p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="image-container">
+            <p></p>
+        </div>
+        <div class="text-content">
+            <h2>Step4: create a Main method And put a loop</h2>
+            <p></p>
+                <code>def main():<br>
+
+                  print("Welcome to Gemini. Start a conversation or type 'exit' to quit.")<br>
+                
+                
+                
+                    while True:<br>
+                
+                        user_input = input("You: ")<br>
+                
+                        if user_input.lower() == 'exit':<br>
+                
+                            print("Goodbye!")<br>
+                
+                            break<br>
+                
+                
+                
+                        response = gpt_response(user_input)<br>
+                
+                        print("AI:", response)<br>
+                
+                
+                
+                if __name__ == "__main__":<br>
+                
+                    main()<br></code></p>
+        </div>
+    </div>
+
+
+<!------------------------------------------------------Footer---------------------------------------------------->
+<footer>
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-logo">
+          <h1 style="color: #000; font-size: large;">DevelopWithJR.info<br></h1>
+        </div>
+        <div class="footer-info">
+          <div class="footer-about">
+            <p></p>
+           </div>
+          <div class="footer-links">
+            <h4>Pages</h4>
+            <ul>
+              <li><a href="index.html" style=" color: #000;">Home</a></li><br>
+              <li><a href="Blogs.html" style=" color: #000;">Blogs</a></li><br>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact Us</h4>
+          <p>
+            <a href="mailto:jrdevelop2003@gmail.com" style=" color: #000;">jrdevelop2003@gmail.com</a><br>
+            <!-- <a href="tel:+918074786868" style=" color: #000;">+918074786868</a> -->
+          </p>
+        </div>
+      </div>
+      <div class="footer-social">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <!-- https://www.linkedin.com/in/abhijith-jr-7805962a2/ -->
+      </div>
+      <div class="footer-copyright">
+        <p>&copy; Copyright 2024 by DevelopWithJR</p>
+      </div>
+    </footer>
+  </footer>
+    <!------------------------------------------------------Footer---------------------------------------------------->
+    
+    
+    <script src="node_modules\jquery\dist\jquery.js"></script>
+    <script src="node_modules\bootstrap\dist\js\bootstrap.js"></script>
+    <script src="js/Script.js"></script>
+    </body>
+    </html>
