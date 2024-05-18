@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-adsense-account" content="ca-pub-8568607330093795">
+    <title>Building a Simple Calculator with Java</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="icon" href="images/logo.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!------------------------------------------------------Header---------------------------------------------------->
+  <header>
+    <a class="navbar-brand" href="index.html">
+      <span id="bd-title">
+        <h1 style="color: #000; font-size: large;">DevelopWithJR.info</h1>
+        <!-- <img src="images/Logo 2.png" alt="Hopeshore Logo" style="height: 35px;" > -->
+      </span>
+    </a>
+    <nav>
+      <a href="index.html" style=" color: #000;">Home</a>
+      <a href="Blogs.html" style=" color: #000;">Blogs</a>
+      <!-- <a href="#" style=" color: #000;">Offers</a> -->
+      <!-- <a href="aboutus.html" style=" color: #000;">About us</a> -->
+      <!-- <a href="#" style=" color: #000;">Contact Us</a> -->
+    </nav>
+    <button id="menu-toggle" class="menu-toggle">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+  </header>
+      
+      
+<!------------------------------------------------------Header---------------------------------------------------->
+
+<div class="image-container">
+  <img src="images/Cover image.jpeg" alt="Image description" class="image">
+  <div class="text-overlay">
+    <h2>Exploring the Power of ChatGPT in Python: A Beginner's Guide<br><br></h2>
+    
+  </div>
+</div>
+
+<div class="container">
+    <div class="text-content">
+        <h2>Indroduction</h2><br>
+        <h1>Welcome to "ChatGPT in Python for Beginners"!</h1>
+        <p>This blog is your exciting journey into artificial intelligence and natural language processing using OpenAI's ChatGPT model, all within the familiar environment of Python.</p>
+        <h2>Who is this blog for?</h2>
+        <ul>
+          <li>Curious hobbyists</li>
+          <li>Students exploring AI</li>
+          <li>Professionals integrating AI</li>
+        </ul>
+        <p>This blog is your entry point into the fascinating world of conversational AI, regardless of your experience level.</p>
+        <h2>What will you learn?</h2>
+        <ul>
+          <li>Setting up Python and libraries</li>
+          <li>Generating text with ChatGPT</li>
+          <li>Conversational interactions</li>
+          <li>Fine-tuning the model for your needs</li>
+        </ul>
+        <p>We'll break down complex concepts and provide examples and exercises for beginners.</p>
+        <h2>What will you achieve?</h2>
+        <ul>
+          <li>Solid understanding of ChatGPT in Python</li>
+          <li>Knowledge and confidence to explore advanced AI</li>
+        </ul>
+        <p>Join us on this exciting adventure with ChatGPT, whether you're a beginner or an experienced Python user!</p></div>
+       
+       
+        <div class="container">
+            <div class="image-container">
+                <p></p>
+            </div>
+            <div class="text-content">
+                <h2>Step1: Install Python and Import Python Libraries</h2>
+                <p>
+                    <code>import openai</code></p>
+            </div>
+        </div>
+       
+       
+        <div class="container">
+            <div class="image-container">
+                <p></p>
+            </div>
+            <div class="text-content">
+                <h2>Step2: Get API Key from Openai developer</h2>
+                <img src="images/Image/chat gpt api key.png" alt="Image description" style="object-fit: contain; height: max-content;">
+                <p>
+                    <a href="https://platform.openai.com/api-keys">Click here to Get the API KEY</a><br>
+                    Put your key in code <br>
+                    <code># Set your OpenAI API key<br>
+
+                        openai.api_key = 'your-api-key'</code></p>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="image-container">
+                <p></p>
+            </div>
+            <div class="text-content">
+                <h2>Step3: create a Method and pass the promt and return the respones of Chatgpt</h2>
+                <p>
+                    <code>def ask_gpt(prompt):<br>
+
+                        # Call the OpenAI API to generate a response<br>
+                    
+                        response = openai.Completion.create(<br>
+                    
+                            engine="davinci-002",  # Specify the GPT model to use<br>
+                    
+                            prompt=prompt,<br>
+                    
+                            max_tokens=50  # Adjust as needed, controls the length of the response<br>
+                    
+                        )<br>
+                    
+                        return response.choices[0].text.strip()<br></code></p>
+            </div>
+        </div>
+
+
+        <div class="container">
+            <div class="image-container">
+                <p></p>
+            </div>
+            <div class="text-content">
+                <h2>Step4: create a Main method And put a loop</h2>
+                <p>
+                    <code>   def main():<br>
+
+                        print("Welcome to ChatGPT. Start a conversation or type 'exit' to quit.")<br>
+                    
+                    
+                    
+                        while True:<br>
+                    
+                            user_input = input("You: ")<br>
+                    
+                            if user_input.lower() == 'exit':<br>
+                    
+                                print("Goodbye!")<br>
+                    
+                                break<br>
+                    
+                    
+                    
+                            response = ask_gpt(user_input)<br>
+                    
+                            print("ChatGPT:", response)<br>
+                    
+                    
+                    
+                    if __name__ == "__main__":<br>
+                    
+                        main()<br></code></p>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="image-container">
+                <p></p>
+            </div>
+            <div class="text-content">
+                <h2>Step5: Run the code</h2>
+                <img src="images/Image/Chatgptresult.png" alt="Image description">
+                <p>
+                    <code></code></p>
+            </div>
+        </div>
+<!------------------------------------------------------Footer---------------------------------------------------->
+<footer>
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-logo">
+          <h1 style="color: #000; font-size: large;">DevelopWithJR.info<br></h1>
+        </div>
+        <div class="footer-info">
+          <div class="footer-about">
+            <p></p>
+           </div>
+          <div class="footer-links">
+            <h4>Pages</h4>
+            <ul>
+              <li><a href="index.html" style=" color: #000;">Home</a></li><br>
+              <li><a href="Blogs.html" style=" color: #000;">Blogs</a></li><br>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact Us</h4>
+          <p>
+            <a href="mailto:jrdevelop2003@gmail.com" style=" color: #000;">jrdevelop2003@gmail.com</a><br>
+            <!-- <a href="tel:+918074786868" style=" color: #000;">+918074786868</a> -->
+          </p>
+        </div>
+      </div>
+      <div class="footer-social">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <!-- https://www.linkedin.com/in/abhijith-jr-7805962a2/ -->
+      </div>
+      <div class="footer-copyright">
+        <p>&copy; Copyright 2024 by DevelopWithJR</p>
+      </div>
+    </footer>
+  </footer>
+    <!------------------------------------------------------Footer---------------------------------------------------->
+    
+    
+    <script src="node_modules\jquery\dist\jquery.js"></script>
+    <script src="node_modules\bootstrap\dist\js\bootstrap.js"></script>
+    <script src="js/Script.js"></script>
+    </body>
+    </html>
